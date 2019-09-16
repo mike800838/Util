@@ -1,0 +1,6 @@
+D:\Eric\EricGit\Util\Util\bin\Release\Util.exe.config
+D:\Eric\EricGit\Util\Util\bin\Release\Util.exe
+D:\Eric\EricGit\Util\Util\bin\Release\Util.pdb
+D:\Eric\EricGit\Util\Util\obj\Release\Util.csprojResolveAssemblyReference.cache
+D:\Eric\EricGit\Util\Util\obj\Release\Util.exe
+D:\Eric\EricGit\Util\Util\obj\Release\Util.pdb
