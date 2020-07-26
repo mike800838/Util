@@ -10,8 +10,8 @@ namespace Util
 {
     class Program
     {
-        private int iErrorCode = 0;
-        private int iFileLineCount = 0;
+        private static int iErrorCode = 0;
+        private static int iFileLineCount = 0;
         public static int iError_EmptyParam     =   100;
         public static int iError_InvalidParam   =   101;
         public static int iError_UnSupportParam =   102;
@@ -29,24 +29,25 @@ namespace Util
         public static int iFlags_RemoveEOL      =   515;
         public static int iFlags_RemoveTab      =   516;
 
-        static void Main(string[] args)
-        {
 
-        }
 
-        public int Util_GetErrorCode() {
+        static public int Util_GetErrorCode() {
             return iErrorCode;
         }
 
-        public string Util_RemoveByList(string sOrgString, string[] sTargitWords) {
+        static public string Util_RemoveTokenByList(string sOrgString, string[] sTargitWords) {
             string sOutString = "";
             if (!String.IsNullOrEmpty(sOrgString) && !String.IsNullOrEmpty(sTargitWords[0]))
             {
                 try
                 {
+                    //Console.WriteLine("sTargitWords.Length = " + sTargitWords.Length);
                     for (int i = 0; i < sTargitWords.Length; i++)
                     {
+                        //Console.WriteLine("sTargitWords["+i+"]:"+ sTargitWords[i]);
                         sOutString = Regex.Replace(sOrgString, sTargitWords[i], "");
+                        sOrgString = sOutString;
+                        //Console.WriteLine("sOrgString = " + sOrgString);
                     }
                 }
                 catch (Exception ex) {
@@ -59,7 +60,7 @@ namespace Util
             return sOutString;
         }
 
-        public string Util_Remove(string sOrgString, int iFlags)
+        static public string Util_Remove(string sOrgString, int iFlags)
         {
             string sOutString = "";
             if (!String.IsNullOrEmpty(sOrgString))
@@ -99,7 +100,7 @@ namespace Util
             return sOutString;
         }
 
-        public string Util_ConvertPhrase(string sOrgString, int iFlags) {
+        static public string Util_ConvertPhrase(string sOrgString, int iFlags) {
             string sOutString = "";
             if (iFlags == iFlags_PhraseToUpper)
             {
@@ -116,7 +117,7 @@ namespace Util
             return sOutString;
         }
 
-        public string Util_ReadAllFile(string sFilePath){
+        static public string Util_ReadAllFile(string sFilePath){
             string sOutString = "";
             bool bFileExist = File.Exists(sFilePath);
             if (bFileExist)
@@ -131,7 +132,7 @@ namespace Util
             return sOutString;
         }
 
-        public string[] Util_ReadFilebyLine(string sFilePath)
+        static public string[] Util_ReadFilebyLine(string sFilePath)
         {
             string[] sOutString;
             
@@ -172,8 +173,26 @@ namespace Util
             return sOutString;
         }
 
-        public int Util_GetFileLineCount() {
+        static public int Util_GetFileLineCount() {
             return iFileLineCount;
+        }
+
+
+        private static void Test_Util_RemoveTokenByList() {
+            Console.WriteLine("==== Test Util_RemoveTokenByList ====");
+            //Util_RemoveTokenByList
+            string[] asTokenList = { "aaa", "bbb" };
+            string sOrgString = "abc ababa aaa ccc";
+            Console.WriteLine("sOrgString = " + sOrgString);
+            string sOutput = Util_RemoveTokenByList(sOrgString, asTokenList);
+            Console.WriteLine("sOutput = " + sOutput);
+        }
+
+        static void Main(string[] args)
+        {
+            //Test_Util_RemoveTokenByList();
+
+            Console.Read();
         }
     }
 }

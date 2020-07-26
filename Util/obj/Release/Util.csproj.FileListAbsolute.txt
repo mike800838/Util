@@ -4,3 +4,9 @@ D:\Eric\EricGit\Util\Util\bin\Release\Util.pdb
 D:\Eric\EricGit\Util\Util\obj\Release\Util.csprojResolveAssemblyReference.cache
 D:\Eric\EricGit\Util\Util\obj\Release\Util.exe
 D:\Eric\EricGit\Util\Util\obj\Release\Util.pdb
+D:\Gi\Git\Util\Util\bin\Release\Util.exe.config
+D:\Gi\Git\Util\Util\obj\Release\Util.exe
+D:\Gi\Git\Util\Util\obj\Release\Util.pdb
+D:\Gi\Git\Util\Util\obj\Release\Util.csprojResolveAssemblyReference.cache
+D:\Gi\Git\Util\Util\bin\Release\Util.exe
+D:\Gi\Git\Util\Util\bin\Release\Util.pdb
